@@ -182,7 +182,8 @@ onMounted(() => {
 
         Object.assign(div.style, {
             transform: `translate(${n2 * 200}px) rotate(${n2 * 270}deg) scale(${3 + n1 * 2}, ${3 + n2 * 2})`,
-            boxShadow: `0 0 0 .2px hsla(${Math.floor(i * 0.3)}, 70%, 70%, .6)`
+            boxShadow: `0 0 0 .2px hsla(${Math.floor(i * 0.3)}, 70%, 70%, .6)`,
+            zIndex: -1,
         })
 
         content.value.appendChild(div)
@@ -365,7 +366,7 @@ onMounted(() => {
         height: 18px;
         animation: scroll 0.95s ease-in-out alternate infinite;
         fill: none;
-        stroke: #000000;
+        stroke: var(--kopper-green);
         stroke-linecap: round;
         stroke-miterlimit: 10;
         stroke-width: 1;
@@ -573,6 +574,7 @@ onMounted(() => {
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     width: fit-content;
+    z-index: 1000;
 }
 
 .my-button:hover {

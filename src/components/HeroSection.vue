@@ -12,7 +12,7 @@
         </div>
         <div class="container-flex">
             <div class="content-flex">
-                <img alt="Vue logo" class="logo" src="../../images/1on1.png" width="64" height="64" />
+                <img alt="Vue logo" class="logo" src="/images/1on1.png" width="64" height="64" />
                 <div>
                     <h2>Kaffemøder</h2>
                     <p>Personlig samtale – gratis støtte til dig, der har brug for nogen at tale med, uden økonomisk
@@ -21,14 +21,14 @@
                 </div>
             </div>
             <div class="content-flex">
-                <img alt="Vue logo" class="logo" src="../../images/remote-talk.png" width="64" height="64" />
+                <img alt="Vue logo" class="logo" src="/images/remote-talk.png" width="64" height="64" />
                 <div>
                     <h2>Videochat</h2>
                     <p>Støtte over telefon eller video – gratis samtale, hvor du er, når du har brug for det.</p>
                 </div>
             </div>
             <div class="content-flex">
-                <img alt="Vue logo" class="logo" src="../../images/walk-and-talk.png" width="64" height="64" />
+                <img alt="Vue logo" class="logo" src="/images/walk-and-talk.png" width="64" height="64" />
                 <div>
                     <h2>Ude i naturen</h2>
                     <p>En samtale i naturen – rolig støtte i frisk luft, med plads til dine tanker og følelser.</p>
@@ -37,7 +37,7 @@
         </div>
         <div class="video-background">
             <video autoplay muted loop playsinline>
-                <source src="../../public/videos/drinking.mp4" type="video/mp4">
+                <source src="/videos/drinking.mp4" type="video/mp4">
             </video>
             <div class="overlay"></div>
 
