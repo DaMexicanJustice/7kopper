@@ -5,13 +5,13 @@
 <template>
     <div class="nav-flex-column">
         <div>
-            <img alt="Vue logo" class="logo" src="../../images/logo.png" width="64" height="64" />
+            <img alt="Vue logo" class="logo" src="./images/logo.png" width="64" height="64" />
         </div>
         <h2>🍔</h2>
     </div>
 
     <div class="nav-flex-row">
-        <img alt="Vue logo" class="logo" src="../../images/logo.png" width="64" height="64" />
+        <img alt="Vue logo" class="logo" src="./images/logo.png" width="64" height="64" />
         <menu>
             <ul>
                 <li><a href="#">Home</a></li>
