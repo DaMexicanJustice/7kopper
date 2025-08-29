@@ -4,44 +4,65 @@
 
 <template>
     <div class="wrapper">
-        <div class="content">
-            <h1>Brug for nogle at snakke med? <br />Vi står klar til at hjælpe</h1>
-            <p>7 Kopper står til rådighed og forbinder dig med en empatisk lytter, der tilbyder gratis støtte.</p>
-            <button @click="'https://7kopper.dk/mentor'">Kickstart din rejse</button>
-            <p>Til dig, der har brug for støtte – uden at det koster</p>
-        </div>
-        <div class="container-flex">
-            <div class="content-flex">
-                <img alt="Vue logo" class="logo" src="/images/1on1.png" width="64" height="64" />
+        <div class="container">
+            <div class="content">
                 <div>
-                    <h2>Kaffemøder</h2>
-                    <p>Personlig samtale – gratis støtte til dig, der har brug for nogen at tale med, uden økonomisk
-                        pres.
+                    <h1>Brug for nogle at snakke med? <br />Vi står klar til at hjælpe</h1>
+                    <p>7 Kopper står til rådighed og forbinder dig med en empatisk lytter, der tilbyder gratis støtte.
                     </p>
+                    <button @click="'https://7kopper.dk/mentor'">Kickstart din rejse</button>
+                    <p>Til dig, der har brug for støtte – uden at det koster</p>
+                </div>
+
+            </div>
+
+            <div class="container-flex">
+                <div class="content-flex">
+                    <img alt="Vue logo" class="logo" src="/images/1on1.png" width="64" height="64" />
+                    <div>
+                        <h2>Kaffemøder</h2>
+                        <p>Personlig samtale – gratis støtte til dig, der har brug for nogen at tale med, uden
+                            økonomisk
+                            pres.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-flex">
+                    <img alt="Vue logo" class="logo" src="/images/remote-talk.png" width="64" height="64" />
+                    <div>
+                        <h2>Videochat</h2>
+                        <p>Støtte over telefon eller video – gratis samtale, hvor du er, når du har brug for det.
+                        </p>
+                    </div>
+                </div>
+                <div class="content-flex">
+                    <img alt="Vue logo" class="logo" src="/images/walk-and-talk.png" width="64" height="64" />
+                    <div>
+                        <h2>Ude i naturen</h2>
+                        <p>En samtale i naturen – rolig støtte i frisk luft, med plads til dine tanker og følelser.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="content-flex">
-                <img alt="Vue logo" class="logo" src="/images/remote-talk.png" width="64" height="64" />
-                <div>
-                    <h2>Videochat</h2>
-                    <p>Støtte over telefon eller video – gratis samtale, hvor du er, når du har brug for det.</p>
-                </div>
-            </div>
-            <div class="content-flex">
-                <img alt="Vue logo" class="logo" src="/images/walk-and-talk.png" width="64" height="64" />
-                <div>
-                    <h2>Ude i naturen</h2>
-                    <p>En samtale i naturen – rolig støtte i frisk luft, med plads til dine tanker og følelser.</p>
-                </div>
-            </div>
-        </div>
-        <div class="video-background">
-            <video autoplay muted loop playsinline>
-                <source src="/videos/drinking.mp4" type="video/mp4">
-            </video>
-            <div class="overlay"></div>
 
         </div>
+
+        <!-- Scroll indicator at the bottom -->
+        <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <svg viewBox="0 0 24 24">
+                <line class="st1" x1="12" y1="1" x2="12" y2="22.5" />
+                <line class="st1" x1="12.1" y1="22.4" x2="18.9" y2="15.6" />
+                <line class="st1" x1="11.9" y1="22.4" x2="5.1" y2="15.6" />
+            </svg>
+        </div>
+    </div>
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="/videos/drinking.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+
     </div>
 </template>
 
@@ -51,7 +72,9 @@
     flex-direction: column;
     color: var(--kopper-beige);
     text-align: left;
-    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
 }
 
 .container-flex {
@@ -60,6 +83,7 @@
     align-items: start;
     justify-content: start;
     gap: 1rem;
+    width: 100%;
 
     h2 {
         font-size: 1.5rem;
@@ -85,10 +109,54 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-evenly;
     height: 100%;
-    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+/* Scroll indicator styles */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto, sans-serif;
+    letter-spacing: 0.2em;
+    font-size: 11px;
+    color: var(--kopper-beige);
+    z-index: 10;
+
+    span {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    svg {
+        width: 18px;
+        height: 18px;
+        animation: scroll 0.95s ease-in-out alternate infinite;
+        fill: none;
+        stroke: var(--kopper-green);
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 1;
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(10px);
+    }
 }
 
 button {
@@ -149,7 +217,7 @@ video {
 
 @media (min-width: 1024px) {
     .content {
-        width: 45%;
+        width: 100%;
     }
 
     .container-flex {
@@ -172,12 +240,24 @@ video {
     }
 
     .wrapper {
-        width: 80%;
+        width: 100%;
         height: 100%;
-        margin: 0 auto;
         flex-direction: column;
-        align-items: start;
+        align-items: stretch;
         justify-content: space-evenly;
+    }
+}
+
+/* Mobile responsive for scroll indicator */
+@media (max-width: 768px) {
+    .scroll-indicator {
+        bottom: 1rem;
+        font-size: 10px;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
     }
 }
 </style>

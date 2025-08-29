@@ -24,7 +24,7 @@ const services = [
         retweets: 104,
         comments: 45,
         service: "Mentorordning for børn og unge",
-        position: { left: '10%', rotation: -3 }
+        position: { left: '35%', rotation: -3 }
     },
     {
         id: 2,
@@ -54,7 +54,7 @@ const services = [
         retweets: 152,
         comments: 65,
         service: "Antistigmatiseringskampagne",
-        position: { left: '25%', rotation: 2 }
+        position: { left: '45%', rotation: 2 }
     },
     {
         id: 4,
@@ -69,7 +69,7 @@ const services = [
         retweets: 133,
         comments: 58,
         service: "Statistik over terapipriser og adgang",
-        position: { left: '70%', rotation: -1 }
+        position: { left: '65%', rotation: -1 }
     },
     {
         id: 5,
@@ -84,7 +84,7 @@ const services = [
         retweets: 101,
         comments: 49,
         service: "Trivselsfremmende initiativer",
-        position: { left: '5%', rotation: 2 }
+        position: { left: '30%', rotation: 2 }
     }
 ];
 
@@ -102,7 +102,7 @@ services.push(
         retweets: 143,
         comments: 39,
         service: "Mentoring og coaching",
-        position: { left: '15%', rotation: -2 }
+        position: { left: '40%', rotation: -2 }
     },
     {
         id: 7,
@@ -117,7 +117,7 @@ services.push(
         retweets: 178,
         comments: 66,
         service: "Statistik om mental trivsel",
-        position: { left: '45%', rotation: 1 }
+        position: { left: '55%', rotation: 1 }
     },
     {
         id: 8,
@@ -132,7 +132,7 @@ services.push(
         retweets: 97,
         comments: 52,
         service: "Psykiatrisk behandling",
-        position: { left: '30%', rotation: -1 }
+        position: { left: '50%', rotation: -1 }
     },
     {
         id: 9,
@@ -162,7 +162,7 @@ services.push(
         retweets: 122,
         comments: 47,
         service: "Mentorprogram for BPoC-studerende",
-        position: { left: '80%', rotation: -2 }
+        position: { left: '35%', rotation: -2 }
     }
 );
 
@@ -237,7 +237,7 @@ onMounted(() => {
 
         // Add subtle floating animation
         gsap.to(card, {
-            y: "random(-10, 10)",
+            y: "random(-4, 4)",
             rotation: "random(-1, 1)",
             duration: "random(3, 6)",
             repeat: -1,
@@ -258,69 +258,58 @@ onMounted(() => {
     <div id="wrapper">
         <div id="content">
 
-            <div class="scroll">
-                <span>SCROLL</span>
-
-                <svg viewBox="0 0 24 24">
-                    <line class="st1" x1="12" y1="1" x2="12" y2="22.5" />
-                    <line class="st1" x1="12.1" y1="22.4" x2="18.9" y2="15.6" />
-                    <line class="st1" x1="11.9" y1="22.4" x2="5.1" y2="15.6" />
-                </svg>
-
-                <!-- Service cards container - collage style -->
-                <div class="cards-collage">
-                    <div v-for="(service, index) in services" :key="service.id" class="service-card" :style="{
-                        left: service.position.left,
-                        transform: `rotate(${service.position.rotation}deg)`,
-                        top: `${80 + (index * 20)}vh`,
-                        zIndex: 10 + index
-                    }">
-                        <!-- Card header -->
-                        <div class="card-header">
-                            <div class="user-info">
-                                <img :src="service.avatar" :alt="service.username" class="avatar" />
-                                <div class="user-details">
-                                    <div class="username-row">
-                                        <span class="username">{{ service.username }}</span>
-                                        <Verified v-if="service.verified" class="verified-icon" />
-                                    </div>
-                                    <span class="handle">{{ service.handle }}</span>
+            <!-- Service cards container - collage style -->
+            <div class="cards-collage">
+                <div v-for="(service, index) in services" :key="service.id" class="service-card" :style="{
+                    left: service.position.left,
+                    transform: `rotate(${service.position.rotation}deg)`,
+                    top: `${60 + (index * 35)}vh`,
+                    zIndex: 10 + index
+                }">
+                    <!-- Card header -->
+                    <div class="card-header">
+                        <div class="user-info">
+                            <img :src="service.avatar" :alt="service.username" class="avatar" />
+                            <div class="user-details">
+                                <div class="username-row">
+                                    <span class="username">{{ service.username }}</span>
+                                    <Verified v-if="service.verified" class="verified-icon" />
                                 </div>
-                            </div>
-                            <div class="card-actions">
-                                <span class="time">{{ service.time }}</span>
-                                <MoreHorizontal class="more-icon" />
+                                <span class="handle">{{ service.handle }}</span>
                             </div>
                         </div>
-
-                        <!-- Card content -->
-                        <div class="card-content">
-                            <p class="tweet-text">{{ service.content }}</p>
-                            <p class="hashtags">{{ service.hashtags }}</p>
-                            <div class="service-tag">{{ service.service }}</div>
+                        <div class="card-actions">
+                            <span class="time">{{ service.time }}</span>
+                            <MoreHorizontal class="more-icon" />
                         </div>
+                    </div>
 
-                        <!-- Card footer -->
-                        <div class="card-footer">
-                            <div class="action-item">
-                                <MessageCircle class="action-icon" />
-                                <span>{{ service.comments }}</span>
-                            </div>
-                            <div class="action-item">
-                                <Repeat2 class="action-icon" />
-                                <span>{{ service.retweets }}</span>
-                            </div>
-                            <div class="action-item">
-                                <Heart class="action-icon" />
-                                <span>{{ service.likes }}</span>
-                            </div>
-                            <div class="action-item">
-                                <Share class="action-icon" />
-                            </div>
+                    <!-- Card content -->
+                    <div class="card-content">
+                        <p class="tweet-text">{{ service.content }}</p>
+                        <p class="hashtags">{{ service.hashtags }}</p>
+                        <div class="service-tag">{{ service.service }}</div>
+                    </div>
+
+                    <!-- Card footer -->
+                    <div class="card-footer">
+                        <div class="action-item">
+                            <MessageCircle class="action-icon" />
+                            <span>{{ service.comments }}</span>
+                        </div>
+                        <div class="action-item">
+                            <Repeat2 class="action-icon" />
+                            <span>{{ service.retweets }}</span>
+                        </div>
+                        <div class="action-item">
+                            <Heart class="action-icon" />
+                            <span>{{ service.likes }}</span>
+                        </div>
+                        <div class="action-item">
+                            <Share class="action-icon" />
                         </div>
                     </div>
                 </div>
-
             </div>
             <button class="my-button" @click="'https://7kopper.dk/mentor'">Kickstart din rejse</button>
 
@@ -340,39 +329,11 @@ onMounted(() => {
     width: 100%;
     height: 100%;
     position: relative;
+    overflow: hidden;
+
 }
 
-.scroll {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    position: absolute;
-    z-index: 1;
-    font-family: Roboto, sans-serif;
-    letter-spacing: 0.2em;
-    font-size: 11px;
-    margin-top: 3rem;
 
-    span {
-        display: block;
-    }
-
-    svg {
-        margin-top: 10px;
-        width: 18px;
-        height: 18px;
-        animation: scroll 0.95s ease-in-out alternate infinite;
-        fill: none;
-        stroke: var(--kopper-green);
-        stroke-linecap: round;
-        stroke-miterlimit: 10;
-        stroke-width: 1;
-        z-index: 1000;
-    }
-}
 
 .circle {
     width: 20px;
@@ -587,15 +548,7 @@ onMounted(() => {
     outline-offset: 3px;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateY(0);
-    }
 
-    100% {
-        transform: translateY(10px);
-    }
-}
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {

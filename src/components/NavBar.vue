@@ -4,22 +4,28 @@
 
 <template>
     <div class="nav-flex-column">
-        <div>
-            <img alt="Vue logo" class="logo" src="/images/logo.png" width="64" height="64" />
+        <div class="container">
+            <div class="nav-content">
+                <img alt="Vue logo" class="logo" src="/images/logo.png" width="64" height="64" />
+                <h2>🍔</h2>
+            </div>
         </div>
-        <h2>🍔</h2>
     </div>
 
     <div class="nav-flex-row">
-        <img alt="Vue logo" class="logo" src="/images/logo.png" width="64" height="64" />
-        <menu>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Services</a></li>
-            </ul>
-        </menu>
+        <div class="container">
+            <div class="nav-content">
+                <img alt="Vue logo" class="logo" src="/images/logo.png" width="64" height="64" />
+                <menu>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Services</a></li>
+                    </ul>
+                </menu>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -61,6 +67,14 @@ h1 {
     z-index: 1000;
 }
 
+.nav-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
 @media (min-width: 1024px) {
     .nav-flex-row {
         width: 100%;
@@ -68,11 +82,14 @@ h1 {
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 10px;
     }
 
     .nav-flex-column {
         display: none;
+    }
+
+    .nav-content {
+        justify-content: space-between;
     }
 }
 </style>

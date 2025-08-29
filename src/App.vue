@@ -17,6 +17,8 @@ import GsapTest from './components/GsapTest.vue';
     <section class="journey-section">
       <gsap-test />
     </section>
+    <section class="journey-section">
+    </section>
   </main>
 </template>
 
@@ -39,7 +41,7 @@ main {
 
 .full-height {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .journey-section {

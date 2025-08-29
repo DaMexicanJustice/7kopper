@@ -1,12 +1,31 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
   font-weight: normal;
   display: flex;
   flex-direction: column;
+}
+
+/* Container utility classes */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.container-wide {
+  width: 100%;
+  max-width: var(--container-max-width-wide);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-max-width-narrow);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
 /* Link styles */

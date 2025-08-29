@@ -16,7 +16,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@types/imagesloaded": "^4.1.7",
     "gsap": "^3.13.0",
+    "imagesloaded": "^5.0.0",
     "lucide-vue-next": "^0.534.0",
     "pinia": "^3.0.3",
     "simplex-noise": "^4.0.3",
