@@ -24,7 +24,7 @@ const services = [
         retweets: 104,
         comments: 45,
         service: "Mentorordning for børn og unge",
-        position: { left: '35%', rotation: -3 }
+        position: { left: '10%', rotation: -3 }
     },
     {
         id: 2,
@@ -39,7 +39,7 @@ const services = [
         retweets: 204,
         comments: 72,
         service: "Mental sundhed i Danmark",
-        position: { left: '60%', rotation: 1 }
+        position: { left: '11%', rotation: 1 }
     },
     {
         id: 3,
@@ -54,7 +54,7 @@ const services = [
         retweets: 152,
         comments: 65,
         service: "Antistigmatiseringskampagne",
-        position: { left: '45%', rotation: 2 }
+        position: { left: '12%', rotation: 2 }
     },
     {
         id: 4,
@@ -69,7 +69,7 @@ const services = [
         retweets: 133,
         comments: 58,
         service: "Statistik over terapipriser og adgang",
-        position: { left: '65%', rotation: -1 }
+        position: { left: '13%', rotation: -1 }
     },
     {
         id: 5,
@@ -84,7 +84,7 @@ const services = [
         retweets: 101,
         comments: 49,
         service: "Trivselsfremmende initiativer",
-        position: { left: '30%', rotation: 2 }
+        position: { left: '14%', rotation: 2 }
     }
 ];
 
@@ -102,7 +102,7 @@ services.push(
         retweets: 143,
         comments: 39,
         service: "Mentoring og coaching",
-        position: { left: '40%', rotation: -2 }
+        position: { left: '15%', rotation: -2 }
     },
     {
         id: 7,
@@ -117,7 +117,7 @@ services.push(
         retweets: 178,
         comments: 66,
         service: "Statistik om mental trivsel",
-        position: { left: '55%', rotation: 1 }
+        position: { left: '10.5%', rotation: 1 }
     },
     {
         id: 8,
@@ -132,7 +132,7 @@ services.push(
         retweets: 97,
         comments: 52,
         service: "Psykiatrisk behandling",
-        position: { left: '50%', rotation: -1 }
+        position: { left: '11.5%', rotation: -1 }
     },
     {
         id: 9,
@@ -147,7 +147,7 @@ services.push(
         retweets: 203,
         comments: 88,
         service: "Privat terapi og mentaltræning",
-        position: { left: '65%', rotation: 2 }
+        position: { left: '12.5%', rotation: 2 }
     },
     {
         id: 10,
@@ -162,7 +162,7 @@ services.push(
         retweets: 122,
         comments: 47,
         service: "Mentorprogram for BPoC-studerende",
-        position: { left: '35%', rotation: -2 }
+        position: { left: '13.5%', rotation: -2 }
     }
 );
 
@@ -237,7 +237,7 @@ onMounted(() => {
 
         // Add subtle floating animation
         gsap.to(card, {
-            y: "random(-4, 4)",
+            y: "random(-1, 1)",
             rotation: "random(-1, 1)",
             duration: "random(3, 6)",
             repeat: -1,
@@ -558,28 +558,6 @@ onMounted(() => {
 
     #content {
         overflow-x: hidden;
-    }
-
-    .cards-collage {
-        position: static;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem 1rem;
-        min-height: auto;
-        gap: 1.5rem;
-    }
-
-    .service-card {
-        position: relative !important;
-        left: auto !important;
-        top: auto !important;
-        transform: none !important;
-        width: 100%;
-        max-width: 350px;
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-        z-index: 10 !important;
     }
 
     .service-card:hover {
