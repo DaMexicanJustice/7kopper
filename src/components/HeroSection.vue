@@ -5,7 +5,8 @@
 <template>
     <div class="wrapper">
         <div class="container">
-            <div class="content">
+            <div class="content-wrapper">
+                <div class="content">
                 <div>
                     <h1>Brug for nogle at snakke med? <br />Vi står klar til at hjælpe</h1>
                     <p>7 Kopper står til rådighed og forbinder dig med en empatisk lytter, der tilbyder gratis støtte.
@@ -44,6 +45,7 @@
                     </div>
                 </div>
             </div>
+            </div>
 
         </div>
 
@@ -67,6 +69,11 @@
 </template>
 
 <style scoped>
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 .content {
     display: flex;
     flex-direction: column;
@@ -107,9 +114,15 @@
 .wrapper {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     justify-content: center;
     align-items: center;
     height: 100%;
+=======
+    align-items: stretch;
+    justify-content: space-evenly;
+    height: 100svh;
+>>>>>>> 9fada48655e38db87ef1de6f75cc74842839ef9e
     width: 100%;
     gap: 4rem;
 }
