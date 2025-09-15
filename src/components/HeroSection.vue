@@ -72,8 +72,6 @@
     flex-direction: column;
     color: var(--kopper-beige);
     text-align: left;
-    width: 100%;
-    height: 100%;
     justify-content: space-between;
 }
 
@@ -109,11 +107,11 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
-    position: relative;
+    gap: 4rem;
 }
 
 /* Scroll indicator styles */
@@ -243,8 +241,9 @@ video {
         width: 100%;
         height: 100%;
         flex-direction: column;
-        align-items: stretch;
-        justify-content: space-evenly;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
     }
 }
 

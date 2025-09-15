@@ -24,7 +24,7 @@ const services = [
         retweets: 104,
         comments: 45,
         service: "Mentorordning for børn og unge",
-        position: { left: '35%', rotation: -3 }
+        position: { left: '10%', rotation: -3 }
     },
     {
         id: 2,
@@ -39,7 +39,7 @@ const services = [
         retweets: 204,
         comments: 72,
         service: "Mental sundhed i Danmark",
-        position: { left: '60%', rotation: 1 }
+        position: { left: '10%', rotation: 1 }
     },
     {
         id: 3,
@@ -54,7 +54,7 @@ const services = [
         retweets: 152,
         comments: 65,
         service: "Antistigmatiseringskampagne",
-        position: { left: '45%', rotation: 2 }
+        position: { left: '10%', rotation: 2 }
     },
     {
         id: 4,
@@ -69,7 +69,7 @@ const services = [
         retweets: 133,
         comments: 58,
         service: "Statistik over terapipriser og adgang",
-        position: { left: '65%', rotation: -1 }
+        position: { left: '10%', rotation: -1 }
     },
     {
         id: 5,
@@ -84,7 +84,7 @@ const services = [
         retweets: 101,
         comments: 49,
         service: "Trivselsfremmende initiativer",
-        position: { left: '30%', rotation: 2 }
+        position: { left: '10%', rotation: 2 }
     }
 ];
 
@@ -102,7 +102,7 @@ services.push(
         retweets: 143,
         comments: 39,
         service: "Mentoring og coaching",
-        position: { left: '40%', rotation: -2 }
+        position: { left: '10%', rotation: -2 }
     },
     {
         id: 7,
@@ -117,7 +117,7 @@ services.push(
         retweets: 178,
         comments: 66,
         service: "Statistik om mental trivsel",
-        position: { left: '55%', rotation: 1 }
+        position: { left: '10%', rotation: 1 }
     },
     {
         id: 8,
@@ -132,7 +132,7 @@ services.push(
         retweets: 97,
         comments: 52,
         service: "Psykiatrisk behandling",
-        position: { left: '50%', rotation: -1 }
+        position: { left: '10%', rotation: -1 }
     },
     {
         id: 9,
@@ -147,7 +147,7 @@ services.push(
         retweets: 203,
         comments: 88,
         service: "Privat terapi og mentaltræning",
-        position: { left: '65%', rotation: 2 }
+        position: { left: '10%', rotation: 2 }
     },
     {
         id: 10,
@@ -162,7 +162,7 @@ services.push(
         retweets: 122,
         comments: 47,
         service: "Mentorprogram for BPoC-studerende",
-        position: { left: '35%', rotation: -2 }
+        position: { left: '10%', rotation: -2 }
     }
 );
 
@@ -171,6 +171,8 @@ onMounted(() => {
     if (!content.value) return // ✅ Type guard
     console.log('ScrollTrigger initialized')
 
+    const rainbowPath = document.querySelector('.rainbow-path')
+    if (!rainbowPath) return
     const noise2D = createNoise2D()
 
     for (let i = 0; i < 5000; i++) {
@@ -186,7 +188,7 @@ onMounted(() => {
             zIndex: -1,
         })
 
-        content.value.appendChild(div)
+        rainbowPath.appendChild(div)
     }
 
     const circles = document.querySelectorAll('.circle')
@@ -237,7 +239,7 @@ onMounted(() => {
 
         // Add subtle floating animation
         gsap.to(card, {
-            y: "random(-4, 4)",
+            y: "random(-1, 1)",
             rotation: "random(-1, 1)",
             duration: "random(3, 6)",
             repeat: -1,
@@ -255,12 +257,25 @@ onMounted(() => {
     Link: https://linktr.ee/supahfunk
     -->
 
-    <div id="wrapper">
-        <div id="content">
+    <div id="content">
 
+        <!-- Rainbow path container -->
+        <div class="rainbow-path"></div>
+
+        <div class="container">
+            <!-- ...existing cards-collage code... -->
+        </div>
+
+        <button class="my-button" @click="'https://7kopper.dk/mentor'">Kickstart din rejse</button>
+
+        <div class="container">
             <!-- Service cards container - collage style -->
             <div class="cards-collage">
-                <div v-for="(service, index) in services" :key="service.id" class="service-card" :style="{
+                <div v-for="(service, index) in services" :key="service.id" class="service-card" :class="{
+                    'align-left': index % 3 === 0,
+                    'align-center': index % 3 === 1,
+                    'align-right': index % 3 === 2
+                }" :style="{
                     left: service.position.left,
                     transform: `rotate(${service.position.rotation}deg)`,
                     top: `${60 + (index * 35)}vh`,
@@ -311,29 +326,22 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
-            <button class="my-button" @click="'https://7kopper.dk/mentor'">Kickstart din rejse</button>
-
         </div>
 
+        <button class="my-button" @click="'https://7kopper.dk/mentor'">Kickstart din rejse</button>
+
     </div>
+
 </template>
 
 <style>
-#wrapper {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
 #content {
     width: 100%;
     height: 100%;
     position: relative;
     overflow: hidden;
-
+    padding-top: 4rem;
 }
-
-
 
 .circle {
     width: 20px;
@@ -342,6 +350,7 @@ onMounted(() => {
     opacity: 0;
     margin: -19px auto;
     transition: transform 1s cubic-bezier(0.14, 0.15, 0.13, 0.99);
+    position: relaative;
 }
 
 .hero-title {
@@ -363,13 +372,16 @@ onMounted(() => {
 }
 
 .cards-collage {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 8rem;
     width: 100%;
     height: auto;
 }
 
 .service-card {
-    position: absolute;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 16px;
     padding: 1.5rem;
@@ -548,92 +560,35 @@ onMounted(() => {
     outline-offset: 3px;
 }
 
-
-
-/* Mobile Responsive Styles */
-@media (max-width: 768px) {
-    #wrapper {
-        overflow-x: hidden;
-    }
-
-    #content {
-        overflow-x: hidden;
-    }
-
-    .cards-collage {
-        position: static;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem 1rem;
-        min-height: auto;
-        gap: 1.5rem;
-    }
-
-    .service-card {
-        position: relative !important;
-        left: auto !important;
-        top: auto !important;
-        transform: none !important;
-        width: 100%;
-        max-width: 350px;
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-        z-index: 10 !important;
-    }
-
-    .service-card:hover {
-        transform: translateY(-5px) scale(1.02) !important;
-    }
-
-    .my-button {
-        margin: 2rem auto;
-        padding: 0.7rem 1.2rem;
-        font-size: 0.95rem;
-    }
+.rainbow-path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
 }
 
-@media (max-width: 480px) {
-    .service-card {
-        width: 100%;
-        max-width: 300px;
-        padding: 0.875rem;
+@media (min-width: 1024px) {
+    @media (min-width: 1024px) {
+        .cards-collage {
+            gap: 8rem;
+            align-items: stretch;
+        }
+
+        .service-card.align-left {
+            align-self: flex-start;
+        }
+
+        .service-card.align-center {
+            align-self: center;
+        }
+
+        .service-card.align-right {
+            align-self: flex-end;
+        }
     }
 
-    .card-header {
-        margin-bottom: 0.75rem;
-    }
-
-    .username {
-        font-size: 0.9rem;
-    }
-
-    .tweet-text {
-        font-size: 0.9rem;
-    }
-
-    .hashtags {
-        font-size: 0.85rem;
-    }
-
-    .service-tag {
-        font-size: 0.75rem;
-        padding: 0.4rem 0.8rem;
-    }
-
-    .action-item {
-        font-size: 0.85rem;
-    }
-
-    .action-icon {
-        width: 16px;
-        height: 16px;
-    }
-
-    .my-button {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-        margin: 1.5rem auto;
-    }
 }
 </style>

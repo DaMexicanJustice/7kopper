@@ -33,15 +33,18 @@ header {
   padding: 0 2rem;
 }
 
+/* Add this line */
 main {
   display: flex;
   flex-direction: column;
   height: fit-content;
+  padding: 64px 0 0 0;
+  /* top and bottom 64px, left and right 0 */
 }
 
 .full-height {
   width: 100%;
-  min-height: 100vh;
+  height: calc(100vh - 64px);
 }
 
 .journey-section {
