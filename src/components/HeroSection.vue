@@ -7,44 +7,45 @@
         <div class="container">
             <div class="content-wrapper">
                 <div class="content">
-                <div>
-                    <h1>Brug for nogle at snakke med? <br />Vi står klar til at hjælpe</h1>
-                    <p>7 Kopper står til rådighed og forbinder dig med en empatisk lytter, der tilbyder gratis støtte.
-                    </p>
-                    <button @click="'https://7kopper.dk/mentor'">Kickstart din rejse</button>
-                    <p>Til dig, der har brug for støtte – uden at det koster</p>
+                    <div>
+                        <h1>Brug for nogle at snakke med? <br />Vi står klar til at hjælpe</h1>
+                        <p>7 Kopper står til rådighed og forbinder dig med en empatisk lytter, der tilbyder gratis
+                            støtte.
+                        </p>
+                        <button @click="'https://7kopper.dk/mentor'">Kickstart din rejse</button>
+                        <p>Til dig, der har brug for støtte – uden at det koster</p>
+                    </div>
+
                 </div>
 
-            </div>
-
-            <div class="container-flex">
-                <div class="content-flex">
-                    <img alt="Vue logo" class="logo" src="/images/1on1.png" width="64" height="64" />
-                    <div>
-                        <h2>Kaffemøder</h2>
-                        <p>Personlig samtale – gratis støtte til dig, der har brug for nogen at tale med, uden
-                            økonomisk
-                            pres.
-                        </p>
+                <div class="container-flex">
+                    <div class="content-flex">
+                        <img alt="Vue logo" class="logo" src="/images/1on1.png" width="64" height="64" />
+                        <div>
+                            <h2>Kaffemøder</h2>
+                            <p>Personlig samtale – gratis støtte til dig, der har brug for nogen at tale med, uden
+                                økonomisk
+                                pres.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content-flex">
+                        <img alt="Vue logo" class="logo" src="/images/remote-talk.png" width="64" height="64" />
+                        <div>
+                            <h2>Videochat</h2>
+                            <p>Støtte over telefon eller video – gratis samtale, hvor du er, når du har brug for det.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="content-flex">
+                        <img alt="Vue logo" class="logo" src="/images/walk-and-talk.png" width="64" height="64" />
+                        <div>
+                            <h2>Ude i naturen</h2>
+                            <p>En samtale i naturen – rolig støtte i frisk luft, med plads til dine tanker og følelser.
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="content-flex">
-                    <img alt="Vue logo" class="logo" src="/images/remote-talk.png" width="64" height="64" />
-                    <div>
-                        <h2>Videochat</h2>
-                        <p>Støtte over telefon eller video – gratis samtale, hvor du er, når du har brug for det.
-                        </p>
-                    </div>
-                </div>
-                <div class="content-flex">
-                    <img alt="Vue logo" class="logo" src="/images/walk-and-talk.png" width="64" height="64" />
-                    <div>
-                        <h2>Ude i naturen</h2>
-                        <p>En samtale i naturen – rolig støtte i frisk luft, med plads til dine tanker og følelser.
-                        </p>
-                    </div>
-                </div>
-            </div>
             </div>
 
         </div>
@@ -74,6 +75,7 @@
     flex-direction: column;
     gap: 2rem;
 }
+
 .content {
     display: flex;
     flex-direction: column;
@@ -114,15 +116,9 @@
 .wrapper {
     display: flex;
     flex-direction: column;
-<<<<<<< HEAD
     justify-content: center;
     align-items: center;
     height: 100%;
-=======
-    align-items: stretch;
-    justify-content: space-evenly;
-    height: 100svh;
->>>>>>> 9fada48655e38db87ef1de6f75cc74842839ef9e
     width: 100%;
     gap: 4rem;
 }
